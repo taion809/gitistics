@@ -15,6 +15,11 @@ get '/register' do
     erb :'auth/register'
 end
 
+post '/register' do
+    request.body.rewind  # in case someone already read it
+    puts params
+end   
+
 get '/' do
     erb :index
 end
